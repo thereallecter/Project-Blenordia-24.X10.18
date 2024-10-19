@@ -1,18 +1,21 @@
 ﻿using Blenordia.Source.Handlers;
 
+using Console = Blenordia.Source.Console;
+using Shell = System.Console;
+
 namespace Blenordia
 {
     public static class Program
     {
         private static AccountInfo MasterAccountInfo =
-            new AccountInfo("HuskyJew", "anotheremail@gmail.com", "!Password2024", Rank.Player);
+                   new("HuskyJew", "anotheremail@gmail.com", "!Password2024", Rank.Player);
 
-        private static Account MasterAccount = Account.Register(MasterAccountInfo);
+        private static Account MasterAccount =
+                       Account.Register(MasterAccountInfo);
 
         public static void Main(string[] args)
         {
-            System.Console.Title = "Project Blenordia Console";
-
+            Shell.Title = "Project Blenordia Console";
             _ = new Application(MasterAccount);
         }
     }
