@@ -8,7 +8,6 @@
         Owner = 50
     }
 
-    // TODO [+] [10/12/2024 11:05] Create class AccountInfo {}
     public struct AccountInfo
     {
         public AccountInfo(string name, string email, string password, Rank rank = Rank.Visitor)
@@ -53,8 +52,8 @@
     // TODO [+] [10/10/2024 22:06] Make class static
     public class Account
     {
-        public Account Self;
-        public AccountInfo Info;
+        public Account Self { get; }
+        public AccountInfo Info { get; }
 
         public Account(AccountInfo info)
         {
