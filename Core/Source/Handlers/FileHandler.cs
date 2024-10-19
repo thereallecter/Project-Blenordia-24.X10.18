@@ -11,9 +11,9 @@
             FullName = location + name + extsn;
         }
 
-        public string Name { get; set; }
-        public string Extension { get; set; }
-        public string Location { get; set; }
+        public readonly string Name { get; }
+        public readonly string Extension { get; }
+        public readonly string Location { get; }
         public string FullName { get; set; }
     }
 
@@ -95,9 +95,10 @@
             if (Exists(Info))
             {
                 System.IO.File.Move(Info.FullName, destinationPath);
-                Info = new FileInfo(System.IO.Path.GetFileNameWithoutExtension(destinationPath),
-                                    System.IO.Path.GetExtension(destinationPath),
-                                    System.IO.Path.GetDirectoryName(destinationPath) + System.IO.Path.DirectorySeparatorChar);
+                Info = new FileInfo(Path.GetFileNameWithoutExtension(destinationPath),
+                                    Path.GetExtension(destinationPath),
+                                    Path.GetDirectoryName(destinationPath) +
+                                    Path.DirectorySeparatorChar);
             }
             else
             {
