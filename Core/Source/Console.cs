@@ -1,8 +1,8 @@
+
+using Shell = System.Console;
+
 namespace Blenordia.Source
 {
-    // TODO [ ] [10/10/2024 13:33] Refactor Console.Write...() methods
-    // TODO [ ] [10/12/2024 15:37] Add Console.WriteLine...() methods
-
     // TODO [+] [10/10/2024 18:57] Make class static
 
     public static class Console
@@ -58,27 +58,27 @@ namespace Blenordia.Source
         {
             WriteTag("INPUT", ConsoleColor.Magenta);
             Write(message);
-            input = System.Console.ReadLine();
+            input = Shell.ReadLine();
         }
 
         private static void WriteLine(string message)
         {
-            System.Console.WriteLine(message);
+            Shell.WriteLine(message);
         }
 
         private static void Write(string message)
         {
-            System.Console.Write(message);
+            Shell.Write(message);
         }
 
         private static void WriteTag(string tag, ConsoleColor color)
         {
-            System.Console.ForegroundColor = ConsoleColor.White;
-            System.Console.Write("[");
-            System.Console.ForegroundColor = color;
-            System.Console.Write(tag);
-            System.Console.ForegroundColor = ConsoleColor.White;
-            System.Console.Write("] ");
+            Shell.ForegroundColor = ConsoleColor.White;
+            Shell.Write("[");
+            Shell.ForegroundColor = color;
+            Shell.Write(tag);
+            Shell.ForegroundColor = ConsoleColor.White;
+            Shell.Write("] ");
         }
     }
 }
