@@ -41,4 +41,26 @@ namespace Blenordia.Source.Handlers
             return new Map(info);
         }
     }
+
+    public class MiniMap
+    {
+        public MiniMap Self;
+        public MapInfo Info;
+
+        public MiniMap(MapInfo info)
+        {
+            Info = info;
+            Self = this;
+        }
+
+        public void ShowMap()
+        {
+
+        }
+
+        public void HideMap()
+        {
+
+        }
+    }
 }
