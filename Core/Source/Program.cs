@@ -1,15 +1,13 @@
 ﻿using Blenordia.Source.Handlers;
 
-using Console = Blenordia.Source.Console;
-using File = Blenordia.Source.Handlers.File;
-using FileInfo = Blenordia.Source.Handlers.FileInfo;
-
 namespace Blenordia
 {
     public static class Program
     {
-        private static AccountInfo info = new AccountInfo();
-        private static Account MasterAccount = Account.Register(info);
+        private static AccountInfo MasterAccountInfo =
+            new AccountInfo("HuskyJew", "anotheremail@gmail.com", "!Password2024", Rank.Player);
+
+        private static Account MasterAccount = Account.Register(MasterAccountInfo);
 
         public static void Main(string[] args)
         {
