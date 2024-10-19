@@ -6,20 +6,20 @@
         {
             Name = name;
 
-            Info = new FileInfo(name, ".tip", $"Data\\Tiles\\");
-            File = new File(Info);
+            FileInfo = new FileInfo(name, ".tip", $"Data\\Tiles\\");
+            File = new File(FileInfo);
         }
 
         public string Name { get; set; }
 
-        private FileInfo Info { get; set; }
+        private FileInfo FileInfo { get; set; }
         public File File { get; set; }
     }
 
     public class Tile
     {
-        public Tile Self;
-        public TileInfo Info;
+        public Tile Self { get; }
+        public TileInfo Info { get; }
 
         public Tile(TileInfo info)
         {
