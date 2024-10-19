@@ -11,14 +11,6 @@
     // TODO [+] [10/12/2024 11:05] Create class AccountInfo {}
     public struct AccountInfo
     {
-        public AccountInfo()
-        {
-            Name = "HuskyJew";
-            Email = "example@gmail.com";
-            Password = "!Password2024";
-            Rank = Rank.Player;
-        }
-
         public AccountInfo(string name, string email, string password, Rank rank = Rank.Visitor)
         {
             if (string.IsNullOrEmpty(name))
@@ -31,9 +23,19 @@
                 throw new ArgumentException($"'{nameof(email)}' cannot be null or empty.", nameof(email));
             }
 
+            if (!email.Contains("@"))
+            {
+                throw new ArgumentException($"'{nameof(email)}' is not a proper email address.", nameof(email));
+            }
+
             if (string.IsNullOrEmpty(password))
             {
                 throw new ArgumentException($"'{nameof(password)}' cannot be null or empty.", nameof(password));
+            }
+
+            if (password.Length < 6)
+            {
+                throw new ArgumentException($"'{nameof(password)}' length should be greater than 8.", nameof(password));
             }
 
             Name = name;
