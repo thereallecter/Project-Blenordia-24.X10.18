@@ -19,8 +19,8 @@
 
     public class File
     {
-        public File Self;
-        public FileInfo Info;
+        public File Self { get; }
+        public FileInfo Info { get; }
 
         public File[] LoadedFiles = [];
 
@@ -28,24 +28,12 @@
         {
             Info = info;
             Self = this;
-
-            if (!Exists(info))
-            {
-                Console.WriteError($"{this.Info.Name} could not be found.");
-            }
         }
 
         public static File Create(FileInfo info)
         {
             return new File(info);
         }
-
-        private static bool Exists(FileInfo info)
-        {
-            return System.IO.File.Exists(info.FullName);
-        }
-
-        // New methods
 
         public string ReadAllText()
         {
@@ -90,20 +78,27 @@
             }
         }
 
-        public void MoveTo(string destinationPath)
+        private static bool Exists(FileInfo info)
         {
-            if (Exists(Info))
-            {
-                System.IO.File.Move(Info.FullName, destinationPath);
-                Info = new FileInfo(Path.GetFileNameWithoutExtension(destinationPath),
-                                    Path.GetExtension(destinationPath),
-                                    Path.GetDirectoryName(destinationPath) +
-                                    Path.DirectorySeparatorChar);
-            }
-            else
-            {
-                Console.WriteError($"Cannot move file: {Info.FullName} - File not found.");
-            }
+            return System.IO.File.Exists(info.FullName);
         }
+
+        /*
+                public void MoveTo(string destinationPath)
+                {
+                    if (Exists(Info))
+                    {
+                        System.IO.File.Move(Info.FullName, destinationPath);
+                        Info = new FileInfo(Path.GetFileNameWithoutExtension(destinationPath),
+                                            Path.GetExtension(destinationPath),
+                                            Path.GetDirectoryName(destinationPath) +
+                                            Path.DirectorySeparatorChar);
+                    }
+                    else
+                    {
+                        Console.WriteError($"Cannot move file: {Info.FullName} - File not found.");
+                    }
+                }
+        */
     }
 }
