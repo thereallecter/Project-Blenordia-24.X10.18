@@ -2,7 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+
 using Console = Blenordia.Source.Console;
+using File = Blenordia.Source.Handlers.File;
+using FileInfo = Blenordia.Source.Handlers.FileInfo;
 
 namespace Blenordia
 {
@@ -15,6 +18,10 @@ namespace Blenordia
         public Application(Account account)
         {
             InitializeApplication(account);
+
+            FileInfo KeyFileInfo = new FileInfo("public_key", ".blnky", ".\\");
+            File KeyFile = new File(KeyFileInfo);
+            KeyFile.WriteAllText($"-public_key:{ApplicationID}");
         }
 
         private void InitializeApplication(Account account)
@@ -37,7 +44,7 @@ namespace Blenordia
             // System.Console.Clear();
             Console.WriteInfo($"Welcome {MasterAccount.Info.Name}!");
 
-            Console.WriteInput("G:\\Blenordia> ", out string? input);
+            // Console.WriteInput("G:\\Blenordia> ", out string? input);
         }
 
         public bool Setup()
