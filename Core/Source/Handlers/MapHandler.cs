@@ -12,23 +12,23 @@ namespace Blenordia.Source.Handlers
             Width = width;
             Height = height;
 
-            Info = new FileInfo(name, ".mip", $"Data\\Maps\\");
-            File = new File(Info);
+            FileInfo = new FileInfo(name, ".mip", $"Data\\Maps\\");
+            File = new File(FileInfo);
         }
 
         public string Name { get; set; }
         public int Width { get; set; }
         public int Height { get; set; }
 
-        private FileInfo Info { get; set; }
+        private FileInfo FileInfo { get; set; }
         public File File { get; set; }
         public Tile[]? Tiles { get; set; }
     }
 
     public class Map
     {
-        public Map Self;
-        public MapInfo Info;
+        public Map Self { get; }
+        public MapInfo Info { get; }
 
         public Map(MapInfo info)
         {
@@ -39,28 +39,6 @@ namespace Blenordia.Source.Handlers
         public static Map Create(MapInfo info)
         {
             return new Map(info);
-        }
-    }
-
-    public class MiniMap
-    {
-        public MiniMap Self;
-        public MapInfo Info;
-
-        public MiniMap(MapInfo info)
-        {
-            Info = info;
-            Self = this;
-        }
-
-        public void ShowMap()
-        {
-
-        }
-
-        public void HideMap()
-        {
-
         }
     }
 }
