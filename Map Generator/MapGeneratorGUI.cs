@@ -12,10 +12,11 @@ namespace Map_Generator
 
         private void MapGeneratorGUI_Load(object sender, EventArgs e)
         {
-            MapInfo TempMapInfo = new MapInfo("Temp Map");
+            MapInfo TempMapInfo = new("Temp Map");
             Map TempMap = Map.Create(TempMapInfo);
 
-            TempMap.Info.File.WriteAllText("Hello World");
+
+            // TempMap.Info.File.WriteAllText("Hello World");
         }
     }
 }
