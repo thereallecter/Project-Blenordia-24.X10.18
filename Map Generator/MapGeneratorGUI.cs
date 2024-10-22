@@ -15,14 +15,7 @@ namespace Map_Generator
             MapInfo TempMapInfo = new MapInfo("Temp Map");
             Map TempMap = Map.Create(TempMapInfo);
 
-
-
             TempMap.Info.File.WriteAllText("Hello World");
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
