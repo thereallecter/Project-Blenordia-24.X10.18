@@ -11,7 +11,7 @@ namespace Blenordia
                    new("HuskyJew", "anotheremail@gmail.com", "!Password2024", Rank.Player);
 
         private static Account MasterAccount =
-                       Account.Register(MasterAccountInfo);
+                       Account.Create(MasterAccountInfo);
 
         public static void Main(string[] args)
         {
