@@ -12,7 +12,7 @@ namespace Blenordia.Source.Handlers
             Width = width;
             Height = height;
 
-            FileInfo = new FileInfo(name, ".mip", $"Data\\Maps\\");
+            FileInfo = new FileInfo(name, ".mip", "Data\\Maps\\");
             File = new File(FileInfo);
         }
 
@@ -30,7 +30,7 @@ namespace Blenordia.Source.Handlers
         public Map Self { get; }
         public MapInfo Info { get; }
 
-        public Map(MapInfo info)
+        private Map(MapInfo info)
         {
             Info = info;
             Self = this;
@@ -38,6 +38,7 @@ namespace Blenordia.Source.Handlers
 
         public static Map Create(MapInfo info)
         {
+            System.IO.File.Create(info.File.Info.FullName);
             return new Map(info);
         }
     }
