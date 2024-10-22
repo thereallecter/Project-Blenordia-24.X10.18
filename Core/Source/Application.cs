@@ -19,8 +19,8 @@ namespace Blenordia
         {
             InitializeApplication(account);
 
-            FileInfo KeyFileInfo = new FileInfo("public_key", ".blnky", ".\\");
-            File KeyFile = new File(KeyFileInfo);
+            FileInfo KeyFileInfo = new("publikey", ".blnky", ".\\");
+            File KeyFile = new(KeyFileInfo);
             KeyFile.WriteAllText($"-public_key:{ApplicationID}");
         }
 
