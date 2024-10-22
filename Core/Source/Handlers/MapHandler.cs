@@ -1,6 +1,7 @@
 ﻿using System.Drawing.Imaging;
 using System.Drawing;
 using System;
+using Microsoft.Win32.SafeHandles;
 
 namespace Blenordia.Source.Handlers
 {
@@ -35,7 +36,12 @@ namespace Blenordia.Source.Handlers
 
         public static Map Create(MapInfo info)
         {
-            System.IO.File.Create(info.File.Info.FullName);
+
+            if (System.IO.File.Exists(info.File.Info.FullName))
+            {
+                System.IO.File.Create(info.File.Info.FullName);
+            }
+
             return new Map(info);
         }
     }
