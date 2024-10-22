@@ -22,9 +22,7 @@
         public File Self { get; }
         public FileInfo Info { get; }
 
-        public File[] LoadedFiles = [];
-
-        public File(FileInfo info)
+        private File(FileInfo info)
         {
             Info = info;
             Self = this;
