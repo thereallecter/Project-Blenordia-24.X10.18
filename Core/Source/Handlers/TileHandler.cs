@@ -7,7 +7,7 @@
             Name = name;
 
             FileInfo = new FileInfo(name, ".tip", $"Data\\Tiles\\");
-            File = new File(FileInfo);
+            File = File.Create(FileInfo);
         }
 
         public string Name { get; set; }
@@ -18,13 +18,16 @@
 
     public class Tile
     {
-        public Tile Self { get; }
         public TileInfo Info { get; }
 
-        public Tile(TileInfo info)
+        private Tile(TileInfo info)
         {
             Info = info;
-            Self = this;
+        }
+
+        public static Tile Create(TileInfo info)
+        {
+            return new Tile(info);
         }
     }
 }

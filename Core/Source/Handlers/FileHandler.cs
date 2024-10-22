@@ -14,18 +14,17 @@
         public readonly string Name { get; }
         public readonly string Extension { get; }
         public readonly string Location { get; }
+
         public string FullName { get; set; }
     }
 
     public class File
     {
-        public File Self { get; }
         public FileInfo Info { get; }
 
         private File(FileInfo info)
         {
             Info = info;
-            Self = this;
         }
 
         public static File Create(FileInfo info)

@@ -13,7 +13,7 @@ namespace Blenordia.Source.Handlers
             Height = height;
 
             FileInfo = new FileInfo(name, ".mip", "Data\\Maps\\");
-            File = new File(FileInfo);
+            File = File.Create(FileInfo);
         }
 
         public string Name { get; set; }
@@ -22,18 +22,15 @@ namespace Blenordia.Source.Handlers
 
         private FileInfo FileInfo { get; set; }
         public File File { get; set; }
-        public Tile[]? Tiles { get; set; }
     }
 
     public class Map
     {
-        public Map Self { get; }
         public MapInfo Info { get; }
 
         private Map(MapInfo info)
         {
             Info = info;
-            Self = this;
         }
 
         public static Map Create(MapInfo info)

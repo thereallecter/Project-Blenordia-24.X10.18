@@ -51,16 +51,14 @@
 
     public class Account
     {
-        public Account Self { get; }
         public AccountInfo Info { get; }
 
         private Account(AccountInfo info)
         {
             Info = info;
-            Self = this;
         }
 
-        public static Account Register(AccountInfo info)
+        public static Account Create(AccountInfo info)
         {
             return new Account(info);
         }
