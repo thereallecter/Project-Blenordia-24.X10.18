@@ -22,7 +22,7 @@ public class Template
         Info = new TemplateInfo(param_1, param_2, param_3);
     }
 
-    public static Template Create(FileInfo info)
+    public static Template Create(TemplateInfo info)
     {
         return new Template(info);
     }
