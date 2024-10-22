@@ -5,7 +5,12 @@ VisualStudioVersion = 17.9.34616.47
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project Blenordia", "Core\Project Blenordia.csproj", "{DE366C20-3A65-495E-B823-B35460F66D09}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapGenerator", "Map Generator\MapGenerator.csproj", "{928EDD24-2BAA-4F13-9079-C6B4B8F36D5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MapGenerator", "Map Generator\MapGenerator.csproj", "{928EDD24-2BAA-4F13-9079-C6B4B8F36D5E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D00948D0-57E3-46D9-93DF-135CBAC712F1}"
+	ProjectSection(SolutionItems) = preProject
+		TemplateHandler.cs = TemplateHandler.cs
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
