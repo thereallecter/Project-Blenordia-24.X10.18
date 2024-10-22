@@ -49,13 +49,12 @@
         public Rank Rank { get; set; }
     }
 
-    // TODO [+] [10/10/2024 22:06] Make class static
     public class Account
     {
         public Account Self { get; }
         public AccountInfo Info { get; }
 
-        public Account(AccountInfo info)
+        private Account(AccountInfo info)
         {
             Info = info;
             Self = this;
