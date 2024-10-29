@@ -7,16 +7,16 @@ namespace Blenordia
 {
     public static class Program
     {
-        private static AccountInfo MasterAccountInfo =
-                   new("HuskyJew", "anotheremail@gmail.com", "!Password2024", Rank.Player);
-
-        private static Account MasterAccount =
-                       Account.Create(MasterAccountInfo);
-
         public static void Main(string[] args)
         {
             Shell.Title = "Project Blenordia Console";
-            _ = new Application(MasterAccount);
+
+            _ = new Application(
+                    Account.Create(
+                        new AccountInfo("Player", "player@gmail.com", "password", Rank.Player)));
+
+            Map PirateCave = Map.Create(new MapInfo("PirateCave"));
+            Map EpicPirateCave = Map.Create(new MapInfo("EpicPirateCave"));
         }
     }
 }
