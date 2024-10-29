@@ -4,21 +4,15 @@
     {
         public FileInfo(string name, string extsn, string location)
         {
-            Name = name;
-            Extension = extsn;
-            Location = location;
-
-            FullName = location + name + extsn;
+            Name = name + extsn;
+            Location = location + Name;
         }
 
         public readonly string Name { get; }
-        public readonly string Extension { get; }
         public readonly string Location { get; }
-
-        public string FullName { get; set; }
     }
 
-    public class File
+    public sealed class File
     {
         public FileInfo Info { get; }
 
@@ -36,30 +30,30 @@
         {
             if (Exists(Info))
             {
-                return System.IO.File.ReadAllText(Info.FullName);
+                return System.IO.File.ReadAllText(Info.Location);
             }
-            throw new FileNotFoundException($"File not found: {Info.FullName}");
+            throw new FileNotFoundException($"File not found: {Info.Location}");
         }
 
         public void WriteAllText(string content)
         {
-            System.IO.File.WriteAllText(Info.FullName, content);
+            System.IO.File.WriteAllText(Info.Location, content);
         }
 
         public void AppendText(string content)
         {
-            System.IO.File.AppendAllText(Info.FullName, content);
+            System.IO.File.AppendAllText(Info.Location, content);
         }
 
         public void Delete()
         {
             if (Exists(Info))
             {
-                System.IO.File.Delete(Info.FullName);
+                System.IO.File.Delete(Info.Location);
             }
             else
             {
-                Console.WriteError($"Cannot delete file: {Info.FullName} - File not found.");
+                Console.WriteError($"Cannot delete file: {Info.Location} - File not found.");
             }
         }
 
@@ -67,17 +61,17 @@
         {
             if (Exists(Info))
             {
-                System.IO.File.Copy(Info.FullName, destinationPath, overwrite: false);
+                System.IO.File.Copy(Info.Location, destinationPath, overwrite: false);
             }
             else
             {
-                Console.WriteError($"Cannot copy file: {Info.FullName} - File not found.");
+                Console.WriteError($"Cannot copy file: {Info.Location} - File not found.");
             }
         }
 
         private static bool Exists(FileInfo info)
         {
-            return System.IO.File.Exists(info.FullName);
+            return System.IO.File.Exists(info.Location);
         }
 
         /*
