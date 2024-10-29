@@ -7,7 +7,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <StartupObject>Blenordia.Program</StartupObject>
-    <BaseOutputPath>E:\Hideout Debug Environment\Project Blenordia\Build</BaseOutputPath>
+    <BaseOutputPath>E:\Hideout Debug Environment\Project-Blenordia\Build</BaseOutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -23,16 +23,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Update="Data\Maps\SpectralManor.mip">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    <Compile Remove="Data\Packages\**" />
+    <EmbeddedResource Remove="Data\Packages\**" />
+    <None Remove="Data\Packages\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Data\Maps\SpectralManor\SpectralManor.mip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Start Project Blenordia.bat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Data\Maps\" />
   </ItemGroup>
 
   <ItemGroup>
