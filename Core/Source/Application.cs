@@ -17,11 +17,6 @@ namespace Blenordia
 
         public Application(Account account)
         {
-            InitializeApplication(account);
-        }
-
-        private void InitializeApplication(Account account)
-        {
             if (string.IsNullOrEmpty(account.Info.Name))
             {
                 Console.WriteError("Invalid account name.");
@@ -31,29 +26,13 @@ namespace Blenordia
             MasterAccount = account;
             Console.WriteLog($"Username: {MasterAccount.Info.Name}");
 
-            if (!Setup())
-            {
-                Console.WriteError("Failed application setup.");
-                return;
-            }
+            GenerateApplicationID(out string applicationId);
+            ApplicationID = applicationId;
 
             // System.Console.Clear();
             Console.WriteInfo($"Welcome {MasterAccount.Info.Name}!");
 
             // Console.WriteInput("G:\\Blenordia> ", out string? input);
-        }
-
-        public bool Setup()
-        {
-            GenerateApplicationID(out string applicationId);
-            ApplicationID = applicationId;
-
-            return true;
-        }
-
-        public void Exit()
-        {
-            MasterAccount = null;
         }
 
         public double GenerateApplicationID(out string applicationId)
@@ -70,7 +49,7 @@ namespace Blenordia
             return finished;
         }
 
-        private double CalculateApplicationID(long now, double factor, double publicKey)
+        private static double CalculateApplicationID(long now, double factor, double publicKey)
         {
             double[,] timesTable = new double[16, 2];
 
@@ -133,7 +112,7 @@ namespace Blenordia
             return key;
         }
 
-        // this was a ADHD thang dealing with numerology. actually pretty cool
+        // this was a ADHD thang.
         private static void Calculate453()
         {
             for (int i = 3; i < 64 * 64; i += 3)
