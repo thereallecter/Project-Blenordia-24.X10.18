@@ -14,10 +14,9 @@ namespace Blenordia
                     Account.Create(
                         new AccountInfo("Player", "player@gmail.com", "password", Rank.Player)));
 
-            Map PirateCave = Map.Create(new MapInfo("PirateCave"));
-            Map EpicPirateCave = Map.Create(new MapInfo("EpicPirateCave"));
-
-            Map HollowForest = Map.Create(new MapInfo("HollowForest"));
+            World PirateCave = new(Map.Create(new MapInfo("PirateCave")));
+            World HollowForest = new(Map.Create(new MapInfo("HollowForest")));
+            World EpicPirateCave = new(Map.Create(new MapInfo("EpicPirateCave")));
         }
     }
 }
