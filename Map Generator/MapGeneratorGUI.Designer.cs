@@ -28,24 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MapGeneratorGUI));
-            MapPreviewPanel = new Panel();
             SuspendLayout();
-            // 
-            // MapPreviewPanel
-            // 
-            MapPreviewPanel.BackgroundImage = (Image)resources.GetObject("MapPreviewPanel.BackgroundImage");
-            MapPreviewPanel.Location = new Point(496, 2);
-            MapPreviewPanel.Name = "MapPreviewPanel";
-            MapPreviewPanel.Size = new Size(512, 512);
-            MapPreviewPanel.TabIndex = 0;
             // 
             // MapGeneratorGUI
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1010, 517);
-            Controls.Add(MapPreviewPanel);
             Name = "MapGeneratorGUI";
             Text = "Project Blenordia: Map Generator";
             Load += MapGeneratorGUI_Load;
@@ -53,7 +42,5 @@
         }
 
         #endregion
-
-        private Panel MapPreviewPanel;
     }
 }
