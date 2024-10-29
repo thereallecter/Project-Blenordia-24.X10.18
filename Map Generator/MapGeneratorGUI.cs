@@ -1,4 +1,3 @@
-using Blenordia.Source.Handlers;
 using File = Blenordia.Source.Handlers.File;
 
 namespace Map_Generator
@@ -12,11 +11,7 @@ namespace Map_Generator
 
         private void MapGeneratorGUI_Load(object sender, EventArgs e)
         {
-            MapInfo TempMapInfo = new("Temp Map");
-            Map TempMap = Map.Create(TempMapInfo);
 
-
-            // TempMap.Info.File.WriteAllText("Hello World");
         }
     }
 }
