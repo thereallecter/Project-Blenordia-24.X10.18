@@ -29,9 +29,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Data\Maps\SpectralManor\SpectralManor.mip">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="Start Project Blenordia.bat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
