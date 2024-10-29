@@ -7,7 +7,7 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-    <BaseOutputPath>E:\Hideout Debug Environment\Project Blenordia\Build</BaseOutputPath>
+    <BaseOutputPath>E:\Hideout Debug Environment\Project-Blenordia\Build</BaseOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
