@@ -1,10 +1,12 @@
-namespace Blenordia.Maps 
+using Blenordia.Source.Handlers;
+
+namespace Blenordia.Maps
 {
-    public class PirateCave 
+    public class PirateCave
     {
         public MapInfo Info;
 
-        public PirateCave(MapInfo info) 
+        public PirateCave(MapInfo info)
         {
             Info = info;
         }
